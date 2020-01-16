@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :menuToggle="sidebar" />
+    <Header :menuToggle="sidebar" v-if="header" />
     <Sidebar v-if="sidebar" />
     <main class="main" :class="{'main--no-sidebar': !sidebar, 'main--sidebar-is-open' : this.$store.state.sidebarOpen}">
       <slot/>
@@ -26,6 +26,10 @@ export default {
     Sidebar
   },
   props: {
+    header: {
+      type: Boolean,
+      default: true
+    },
     sidebar: {
       type: Boolean,
       default: true
@@ -51,13 +55,13 @@ export default {
   transition: transform .15s ease-in-out;
 
   @include respond-above(sm) {
-    padding: 100px 30px 30px;
+    padding: 30px 30px 30px;
     transform: translateX(300px);
     width: calc(100% - 300px);
   }
 
   @include respond-above(md) {
-    padding: 100px 80px 30px;
+    padding: 30px 80px;
   }
 
   &--no-sidebar {

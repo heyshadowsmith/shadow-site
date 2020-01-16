@@ -1,14 +1,9 @@
 <template>
-  <Layout :sidebar="false">
-    <div class="content">
-      <h1>{{ $static.metadata.siteName }} - {{ this.description }}</h1>
-      <nav>
-        <!-- To use other icons here, you need to import them in the Shortcut component -->
-        <Shortcut link="/getting-started" text="Introduction" icon="play-icon" />
-        <Shortcut link="/theme-configuration" text="Configuration" icon="sliders-icon" />
-        <Shortcut link="/theme-configuration#changing-colors" text="Change colors" icon="eye-icon" />
-      </nav>
-    </div>
+  <Layout>
+    <h1>
+      Hello, my name is Shadow Smith 
+    </h1>
+    <p>I am a serial learner and software engineer that believes opportunities for discovery and growth are limitless with the power of current web technologies, and as a result, I have developed an insatiable passion for creatively solving problems and inspiring others to do the same.</p>
   </Layout>
 </template>
 
@@ -21,15 +16,20 @@ query {
 </static-query>
 
 <script>
-import Shortcut from '~/components/Shortcut.vue'
+import { TwitterIcon, GithubIcon, CodepenIcon, LinkedinIcon } from 'vue-feather-icons'
+import Logo from '~/components/Logo.vue'
 
 export default {
   components: {
-    Shortcut
+    TwitterIcon,
+    GithubIcon,
+    CodepenIcon,
+    LinkedinIcon,
+    Logo
   },
   data() {
     return {
-      description: 'The ultimate static generated documentation theme for the JAM-stack'
+      logoColor: 'bright'
     }
   },
   metaInfo() {
@@ -39,47 +39,11 @@ export default {
         { key: 'description', name: 'description', content: 'A theme for static site documentation based on Gridsome, ready to deploy to Netlify in one click.' }
       ]
     }
+  },
+  mounted() {
+    if (process.isClient) {
+      this.logoColor = localStorage.getItem('theme')
+    }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  text-align: center;
-  max-width: 600px;
-  margin: 1.5em auto 1.5em;
-
-  @include respond-above(md) {
-    max-width: 1000px;
-  }
-}
-
-h2 {
-  font-size: 1.4rem;
-  margin: 0;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-
-  @include respond-above(sm) {
-    flex-direction: row;
-  }
-}
-
-.git {
-  margin: 3em 0 0;
-  align-self: center;
-
-  @include respond-above(md) {
-    margin: 5em 0 0;
-  }
-}
-</style>
