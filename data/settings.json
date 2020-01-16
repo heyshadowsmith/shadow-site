@@ -1,6 +1,15 @@
 {
   "sidebar": [
     {
+      "section": "Posts",
+      "topics": [
+        {
+          "title": "Setting up a SASS/SCSS transpiler with NPM",
+          "slug": "setting-up-a-sass-scss-transpiler-with-npm"
+        }
+      ]
+    },
+    {
       "section": "Introduction",
       "topics": [
         {
