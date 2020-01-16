@@ -16,4 +16,5 @@ fields:
   label: slug
 pages:
 - docs/editing-in-forestry.md
+- docs/how-to-find-your-aws-cognito-identitypoolid.md
 - docs/setting-up-a-sass-scss-transpiler-with-npm.md
