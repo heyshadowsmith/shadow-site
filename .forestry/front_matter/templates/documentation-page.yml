@@ -15,4 +15,5 @@ fields:
   name: slug
   label: slug
 pages:
+- docs/Posts/setting-up-a-sass-scss-transpiler-with-npm.md
 - docs/editing-in-forestry.md
