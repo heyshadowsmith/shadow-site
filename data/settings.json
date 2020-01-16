@@ -4,6 +4,10 @@
       "section": "Posts",
       "topics": [
         {
+          "title": "How to find your AWS Cognito IdentityPoolId",
+          "slug": "how-to-find-your-aws-cognito-identitypoolid"
+        },
+        {
           "title": "Setting up a SASS/SCSS transpiler with NPM",
           "slug": "setting-up-a-sass-scss-transpiler-with-npm"
         }
